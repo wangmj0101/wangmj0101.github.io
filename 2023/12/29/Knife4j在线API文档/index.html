@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>关于我 | JLivearnの博客</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="关于我 | JLivearnの博客">
+  <title>Knife4j在线API文档 | JLivearnの博客</title>
+  <meta name="keywords" content=" knife4j ">
+  <meta name="description" content="Knife4j在线API文档 | JLivearnの博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="毕业于沈理，野生IT，目前从事Java开发及相关工作。 联系方式QQ：1414825685邮箱：&amp;#x77;&amp;#97;&amp;#110;&amp;#103;&amp;#x6d;&amp;#x6a;&amp;#64;&amp;#101;&amp;#x6d;&amp;#x61;&amp;#105;&amp;#x6c;&amp;#x2e;&amp;#x63;&amp;#110;">
 <meta property="og:type" content="website">
@@ -282,19 +282,36 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <article id="post-Knife4j在线API文档" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">关于我</h1>
+        <h1 class="article-title">Knife4j在线API文档</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="Java">Java</a> > 
+            
+            <a  data-rel="Java&lt;---&gt;框架">框架</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color3">knife4j</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2023-12-29 09:15:39'>2023-12-28 12:00</time>
+            发布时间 : <time class="date" title='最后更新: 2023-12-29 09:53:31'>2023-12-29 09:38</time>
         
     </div>
     <div class="article-meta">
@@ -316,7 +333,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F"><span class="toc-text">联系方式</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%89%8D%E8%A8%80"><span class="toc-text">1. 前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Knife4jConfig%E7%B1%BB"><span class="toc-text">2. Knife4jConfig类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Knife4j%E9%85%8D%E7%BD%AE"><span class="toc-text">3. Knife4j配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%90%AF%E5%8A%A8%E9%A1%B9%E7%9B%AE"><span class="toc-text">4. 启动项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-ApiOperation%E6%B3%A8%E8%A7%A3"><span class="toc-text">5. @ApiOperation注解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-ApiOperationSupport%E6%B3%A8%E8%A7%A3"><span class="toc-text">6. @ApiOperationSupport注解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-ApiModelProperty%E6%B3%A8%E8%A7%A3"><span class="toc-text">7. @ApiModelProperty注解</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -332,8 +349,153 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>毕业于沈理，野生IT，目前从事Java开发及相关工作。</p>
-<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><p>QQ：1414825685<br>邮箱：<a href="mailto:&#x77;&#97;&#110;&#103;&#x6d;&#x6a;&#64;&#101;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#x63;&#110;">&#x77;&#97;&#110;&#103;&#x6d;&#x6a;&#64;&#101;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#x63;&#110;</a></p>
+        <h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h2><p><code>Knife4j</code>是一款可以提供在线API文档的框架，是基于Swagger框架实现的，在Spring Boot项目中，使用Knife4j需要添加依赖。</p>
+<p>Slfe4j依赖：</p>
+<pre><code class="XML">&lt;!-- 依赖项:knife4j-spring-boot-starter --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;com.github.xiaoymin&lt;/groupId&gt;
+    &lt;artifactId&gt;knife4j-spring-boot-starter&lt;/artifactId&gt;
+    &lt;version&gt;2.0.9&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<h2 id="2-Knife4jConfig类"><a href="#2-Knife4jConfig类" class="headerlink" title="2. Knife4jConfig类"></a>2. Knife4jConfig类</h2><p>需要添加配置，在<code>xxx项目</code>的<code>xxx.xxx.xxx.xxx.config</code>包下创建</p>
+<pre><code class="java">@Configuration
+@EnableSwagger2WebMvc
+public class Knife4jConfig &#123;
+    /**
+     * 【重要】指定Controller包路径
+     */
+    private String basePackage = &quot;xxx.xxx.xxx.xxx.controller&quot;;
+    /**
+     * 分组名称
+     */
+    private String groupName = &quot;xxx&quot;;
+    /**
+     * 主机名
+     */
+    private String host = &quot;http://java.xxx.cn&quot;;
+    /**
+     * 标题
+     */
+    private String title = &quot;xxx在线API文档--商品管理&quot;;
+    /**
+     * 简介
+     */
+    private String description = &quot;xxx在线API文档--商品管理&quot;;
+    /**
+     * 服务条款URL
+     */
+    private String termsOfServiceUrl = &quot;http://www.apache.org/licenses/LICENSE-2.0&quot;;
+    /**
+     * 联系人
+     */
+    private String contactName = &quot;Java教学研发部&quot;;
+    /**
+     * 联系网址
+     */
+    private String contactUrl = &quot;http://java.xxx.cn&quot;;
+    /**
+     * 联系邮箱
+     */
+    private String contactEmail = &quot;java@xxx.cn&quot;;
+    /**
+     * 版本号
+     */
+    private String version = &quot;1.0.0&quot;;
+
+    @Autowired
+    private OpenApiExtensionResolver openApiExtensionResolver;
+
+    @Bean
+    public Docket docket() &#123;
+        String groupName = &quot;1.0.0&quot;;
+        Docket docket = new Docket(DocumentationType.SWAGGER_2)
+                .host(host)
+                .apiInfo(apiInfo())
+                .groupName(groupName)
+                .select()
+                .apis(RequestHandlerSelectors.basePackage(basePackage))
+                .paths(PathSelectors.any())
+                .build()
+                .extensions(openApiExtensionResolver.buildExtensions(groupName));
+        return docket;
+    &#125;
+
+    private ApiInfo apiInfo() &#123;
+        return new ApiInfoBuilder()
+                .title(title)
+                .description(description)
+                .termsOfServiceUrl(termsOfServiceUrl)
+                .contact(new Contact(contactName,contactUrl,contactEmail))
+                .version(version)
+                .build();
+    &#125;
+&#125;
+</code></pre>
+<blockquote>
+<p>注意：必须修改以上配置中的包名，保证是当前项目中控制器类所在的包！其它各项均可不修改，以上配置代码可以从Knife4j的官网找到！还需要在配置文件中开启Knife4j的增强模式：</p>
+</blockquote>
+<h2 id="3-Knife4j配置"><a href="#3-Knife4j配置" class="headerlink" title="3. Knife4j配置"></a>3. Knife4j配置</h2><pre><code class="yml">knife4j:
+# 是否开启增强模式
+  enable: true
+</code></pre>
+<h2 id="4-启动项目"><a href="#4-启动项目" class="headerlink" title="4. 启动项目"></a>4. 启动项目</h2><p>完成后，启动项目，在浏览器中访问 <a target="_blank" rel="noopener" href="http://localhost:8080/doc.html">http://localhost:8080/doc.html</a> 即可查看当前项目的API文档。</p>
+<pre><code class="java">@Api(tags = &quot;管理员管理模块&quot;)  // 
+@RestController
+@RequestMapping(value = &quot;/admins&quot;, produces = &quot;application/json; charset=utf-8&quot;)
+public class AdminController &#123;
+    // 其它代码...
+&#125;
+</code></pre>
+<h2 id="5-ApiOperation注解"><a href="#5-ApiOperation注解" class="headerlink" title="5. @ApiOperation注解"></a>5. @ApiOperation注解</h2><p>在处理请求的方法上添加<code>@ApiOperation</code>注解可以配置业务名称</p>
+<pre><code class="java">@ApiOperation(&quot;管理员登录&quot;) // 新增
+@PostMapping(&quot;/login&quot;)
+public JsonResult&lt;AdminSimpleVO&gt; login(@Validated AdminLoginDTO adminLoginDTO) &#123;
+    ……
+&#125;
+</code></pre>
+<h2 id="6-ApiOperationSupport注解"><a href="#6-ApiOperationSupport注解" class="headerlink" title="6. @ApiOperationSupport注解"></a>6. @ApiOperationSupport注解</h2><p>当需要指定各业务在API文档中的显示顺序时，可以在处理请求的方法上添加<code>@ApiOperationSupport</code>注解，配置此注解的order属性，最终在显示API文档时，会根据order属性值升序排列，例如：</p>
+<pre><code class="java">@ApiOperation(&quot;管理员登录&quot;)
+@ApiOperationSupport(order = 900) //升序排列
+@PostMapping(&quot;/login&quot;)
+public JsonResult&lt;AdminSimpleVO&gt; login(@Validated AdminLoginDTO adminLoginDTO) &#123;
+   ……
+&#125;
+</code></pre>
+<p>建议以上配置的order值至少是2位的数字，并且有预留位置，例如1019之间的都是增加数据的业务，2029之间的都是删除数据的业务，3039之间都是修改数据的业务，4049之间都是查询数据的业务。</p>
+<h2 id="7-ApiModelProperty注解"><a href="#7-ApiModelProperty注解" class="headerlink" title="7. @ApiModelProperty注解"></a>7. @ApiModelProperty注解</h2><p>如果控制器处理请求的方法的参数是自定义的封装类型，可以在封装类型的属性上添加<code>@ApiModelProperty</code>来配置参数在文档中的显示，例如：</p>
+<pre><code class="java">@Data
+public class AdminLoginDTO implements Serializable &#123;
+    @ApiModelProperty(value = &quot;用户名&quot;) // 配置参数名
+    private String username;
+
+    @ApiModelProperty(&quot;密码&quot;) // 配置参数名
+    private String password;
+
+&#125;
+</code></pre>
+<p>以上<code>@ApiModelProperty</code>除了可以配置参数在API文档中显示的名称以外，还可以配置是否必须，例如：</p>
+<pre><code class="java">@ApiModelProperty(value = &quot;用户名&quot;, required = true)
+</code></pre>
+<p>另外，还可以配置参数类型等，但是，并不是必须配置，通常框架可以正常自动识别。</p>
+<p>对于部分名称可能比较特殊（一般人直接看不懂）的属性，或者对值的规范性要求比较明确（例如某些取值为0或1）的属性，可以列举示例，使得查看API文档的人可以参考，例如：</p>
+<pre><code class="java">@ApiModelProperty(value = &quot;用户名&quot;, required = true, example = &quot;admin&quot;)
+</code></pre>
+<p>除以配置请求参数以外，此属性还可以用于响应结果的类型，例如：public class JsonResult<T> implements Serializable {</p>
+<pre><code class="java">@ApiModelProperty(&quot;业务状态码&quot;)
+private Integer state;
+
+@ApiModelProperty(&quot;消息&quot;)
+private String message;
+
+@ApiModelProperty(&quot;数据&quot;)
+private T data;
+// ......
+</code></pre>
+<p>如果以上private T data;的实际值也需要添加说明，则在对应的类的属性上继续使用@ApiModelProperty配置即可！需要注意：此处data属性可以是任意数据类型，必须声明为泛型，不可以是Object，否则将无法应用<code>@ApiModelProperty</code>的配置。</p>
+<p>另外，当添加在响应的类型的属性上时，还可以在<code>@ApiModelProperty</code>注解中配置position属性，用于设置各属性在响应的JSON中的显示顺序，例如：</p>
+<pre><code class="java">@ApiModelProperty(value = &quot;业务状态码&quot;, position = 5)
+</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注来源，欢迎指出任何有错误或不够清晰的表达！ </span>
