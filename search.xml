@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>JVM加载</title>
+      <link href="/2023/12/30/JVM%E5%8A%A0%E8%BD%BD/"/>
+      <url>/2023/12/30/JVM%E5%8A%A0%E8%BD%BD/</url>
+      
+        <content type="html"><![CDATA[<h2 id="jvm加载机制"><a href="#jvm加载机制" class="headerlink" title="jvm加载机制"></a>jvm加载机制</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+          <category> JVM </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> jvm </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>3-hexo主题设置</title>
+      <link href="/2023/12/30/3-hexo%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE/"/>
+      <url>/2023/12/30/3-hexo%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE/</url>
+      
+        <content type="html"><![CDATA[<h2 id="config-yml相关设置"><a href="#config-yml相关设置" class="headerlink" title="_config.yml相关设置"></a>_config.yml相关设置</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Go基础</title>
+      <link href="/2023/12/30/Go%E5%9F%BA%E7%A1%80/"/>
+      <url>/2023/12/30/Go%E5%9F%BA%E7%A1%80/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> Golang </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Go </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Java中自动拆装箱</title>
+      <link href="/2023/12/29/Java%E4%B8%AD%E8%87%AA%E5%8A%A8%E6%8B%86%E8%A3%85%E7%AE%B1/"/>
+      <url>/2023/12/29/Java%E4%B8%AD%E8%87%AA%E5%8A%A8%E6%8B%86%E8%A3%85%E7%AE%B1/</url>
+      
+        <content type="html"><![CDATA[<ul><li>装箱：自动将基本数据类型转换为包装器类型。</li><li>拆箱：自动将包装器类型转换为基本数据类型。</li></ul><pre><code class="java">public class Number&#123;    public static void main(String[] args)&#123;        Integer i1 = 128; //装箱 相当于Integer.valueOf(128);        int t = i1; //相当于I1.intValue()拆箱        System.out.println(t);    &#125;&#125;</code></pre><p>对于–128到127（默认是127）之间的值,被装箱后，会被放在内存里进行重用但是如果超出了这个值,<em><strong>系统会重新new 一个对象</strong></em></p><blockquote><p>注意 &#x3D;&#x3D; 与 equals的区别:</p><ul><li>&#x3D;&#x3D; 它比较的是对象的地址</li><li>equals 比较的是对象的内容</li></ul></blockquote><pre><code class="java">Integer i1 = 200;Integer i2 = 200;if(i1==i2)&#123;    System.out.println(&quot;true&quot;);&#125;else&#123;    System.out.println(&quot;false&quot;);&#125;</code></pre><p>Java 会对 <code>-128 ~ 127 </code>的整数进行缓存，所以：</p><ul><li>当定义两个变量初始化值位于 -128 ~ 127 之间时，两个变量使用了同一地址</li><li>当两个 Integer 变量的数值超出 -128 ~ 127 范围时, 变量使用了不同地址</li></ul><pre><code class="java">// 在-128~127范围内时Integer a = 123;Integer b = 123;System.out.println(a==b); //输出trueSystem.out.println(a.equals(b)); //输出true// 在-128~127范围外时a = 1230;b = 1230;System.out.println(a==b); //输出falseSystem.out.println(a.equals(b)); //输出 true</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hexo博客搭建</title>
+      <link href="/2023/12/29/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+      <url>/2023/12/29/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
+      
+        <content type="html"><![CDATA[<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><h3 id="node-js"><a href="#node-js" class="headerlink" title="node.js"></a>node.js</h3><p>下载地址：<a href="https://nodejs.org/dist/">https://nodejs.org/dist/</a></p><blockquote><p>最新hexo版本，nodejs建议下载&gt;&#x3D;18.0</p></blockquote><p>查看安装的版本</p><pre><code class="shell">node -vnpm -v</code></pre><p>替换镜像源</p><pre><code class="shell">npm install -g cnpm --registry=https://registry.taobao.org# 查看安装cnpm -v</code></pre><h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><h3 id="cnpm安装hexo"><a href="#cnpm安装hexo" class="headerlink" title="cnpm安装hexo"></a>cnpm安装hexo</h3><p>使用<code>cnpm</code>全局安装hexo</p><pre><code class="shell">cnpm install -g hexo-cli</code></pre><p>安装后验证安装</p><pre><code class="shell">hexo -v</code></pre><h3 id="创建文件夹并初始化"><a href="#创建文件夹并初始化" class="headerlink" title="创建文件夹并初始化"></a>创建文件夹并初始化</h3><p>进入创建的文件夹，在此目录下进行hexo初始化</p><pre><code class="shell">hexo init</code></pre><p>初始化后该目录下的文件结构</p><pre><code class="shell">HexoBlog    |- _config.landscape.yml    |- _config.yml   #配置文件    |- db.json    |- node_modules/    |- package.json    |- public/       #公共静态资源问价夹    |- scaffolds/    |- source/       #资源文件(写作md文件)        |-- _post/            |-- HelloHexo.md            |-- 1.md    |- themes/       #主题文件夹        |-- 3-hexo/  #安装的第三方主题    |- yarn.lock</code></pre><h3 id="启动Hexo"><a href="#启动Hexo" class="headerlink" title="启动Hexo"></a>启动Hexo</h3><p>启动命令中<code>s</code>表示start</p><pre><code class="shell">hexo s</code></pre><h3 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h3><p>新建文章命令</p><pre><code class="shell">hexo n &quot;测试文章&quot;</code></pre><p><code>n</code>表示new，该命令会在<code>source/_post/</code>目录下创建出<code>测试文章.md</code></p><h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><h3 id="Github创建仓库"><a href="#Github创建仓库" class="headerlink" title="Github创建仓库"></a>Github创建仓库</h3><p>GitHub新建仓库时需要注意，创建仓库的名称路径必须固定<code>xxxx.github.io</code>，其中xxxx为GitHub名称。</p><h3 id="hexo中-config-yml配置"><a href="#hexo中-config-yml配置" class="headerlink" title="hexo中_config.yml配置"></a>hexo中_config.yml配置</h3><p>需要在hexo根目录下的<code>_config.yml</code>中配置一下内容：</p><pre><code class="bash">deploy:  type: git  repo: https://github.com/wangmj0101/wangmj0101.github.io.git  branch: master</code></pre><p>配置完事后便可部署到Github上，部署命令</p><pre><code class="bash">hexo clean # hexo g     #hexo d   #</code></pre><h2 id="安装第三方主题"><a href="#安装第三方主题" class="headerlink" title="安装第三方主题"></a>安装第三方主题</h2><p>本博客使用的第三方主题为<code>3-hexo</code>，地址：<a href="https://github.com/yelog/hexo-theme-3-hexo">https://github.com/yelog/hexo-theme-3-hexo</a></p><p>安装插件命令</p><pre><code class="bash">git clone https://github.com/yelog/hexo-theme-3-hexo.git themes/3-hexo</code></pre><p>修改hexo根目录下<code>_config.yml</code>配置文件中的theme</p><pre><code class="bash">theme: 3-hexo</code></pre><p>完事即可！更多相关的主题：</p><h2 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h2><p>新建文档</p><pre><code class="bash">hexo n &quot;新建文档&quot;</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo博客 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>《讨曹檄文》陈琳 东汉</title>
+      <link href="/2023/12/29/%E8%AE%A8%E8%B4%BC%E6%AA%84%E6%96%87/"/>
+      <url>/2023/12/29/%E8%AE%A8%E8%B4%BC%E6%AA%84%E6%96%87/</url>
+      
+        <content type="html"><![CDATA[<p>盖闻明主图危以制变，忠臣虑难以立权。是以有非常之人，然后有非常之事；有非常之事，然后立非常之功。夫非常者，固非常人所拟也。</p><p>曩者，强秦弱主，赵高执柄，专制朝权，威福由己；时人迫胁，莫敢正言；终有望夷之败，祖宗焚减，污辱至今，永为世鉴。及臻吕后季年，产，禄专政，内兼二军，外统梁、赵；擅断万机，决事省禁；下陵上替，海内寒心。于是绛侯、朱虚兴兵奋怒，诛夷逆暴，尊立太宗；故能王道兴隆，光明显融：此则大臣立权之明表也。</p><p>司空曹操：祖父中常侍腾，与左悺、徐璜并作妖孽，饕餮放横，伤化虐民。父嵩乞匄携养，因赃假位；舆金辇璧，输货权门；窃盗鼎司，倾覆重器。操赘阉遗丑，本无懿德；僄狡锋侠，好乱乐祸。</p><p>幕府董统鹰扬，扫除凶逆。续遇董卓，侵官暴民，于是提剑挥鼓，发命东夏，收罗英雄，弃瑕取用。故遂与操同谘合谋，授以裨师；谓其鹰犬之才，爪牙可任。至乃愚佻短略，轻进易退；伤夷折衄，数丧师徒。幕府辄复分兵命锐，修完补辑，表行东郡领衮州刺史，被以虎文，奖成威柄，冀获秦师一克之报。而操遂承资跋扈，恣行凶忒，割剥元元，残贤害善。</p><p>故九江太守边让：英才俊伟，天下知名；直言正色，论不阿谄；身首被枭悬之诛，妻拏受灰灭之咎。自是士林愤痛，民怨弥重；一夫奋臂，举州同声。故躬破于徐方，地夺于吕布；彷徨东裔，蹈据无所。幕府惟强干弱枝之义，且不登叛人之党，故复援旌擐甲，席卷起征。金鼓响振，布众奔沮。拯其死亡之患，复其方伯之位。则幕府无德于兖土之民，而大有造于操也。</p><p>后会銮驾返旆，群贼乱政。时冀州方有北鄙之警，匪遑离局；故使从事中郎徐勋，就发遣操，使缮修郊庙，翊卫幼主。操便放志：专行胁迁，当御省禁；卑侮王室，败法乱纪；坐领三台，专制朝政；爵赏由心，刑戮在口；所爱光五宗，所恶灭三族，群谈者受显诛，腹议者蒙隐戮；百僚钳口，道路以目；尚书记朝会，公卿充员品而已。</p><p>故太尉杨彪：典历二司，享国极位。操因缘睚眦，被以非罪；榜楚参并，五毒备至；触情任忒，不顾宪纲。又议郎赵彦：忠谏直言，义有可纳，是以圣朝含听，改容加锡。操欲迷夺时权，杜绝言路，擅收立杀，不俟报闻。又梁孝王先帝母昆，坟陵尊显；桑梓松柏，犹宜肃恭；而操帅将校吏士，亲临发掘，破棺裸尸，掠取金宝。至今圣朝流涕，士民伤怀！</p><p>操又特置发丘中郎将，摸金校尉，所过隳突，无骸不露。身处三公之位，而行盗贼之态，污国害民，毒施人鬼！加其细政惨苛，科防互设；罾缴充蹊，坑阱塞路；举手挂网罗，动足触机陷：是以衮、豫有无聊之民，帝都有吁嗟之怨。历观载籍，无道之臣，贪残酷烈，于操为甚！</p><p>幕府方诘外奸，未及整训；加绪含容，冀可弥缝。而操豺狼野心，潜包祸谋，乃欲摧挠栋梁，孤弱汉室；除灭忠正，专为枭雄。往者伐鼓北征公孙瓒，强寇桀逆，拒围一年。操因其未破，阴交书命，外助王师，内相掩袭。会其行人发露，瓒亦枭夷，故使锋芒挫缩，厥图不果。今乃屯据敖仓，阻河为固，欲以螳螂之斧，御隆车之隧。</p><p>幕府奉汉威灵，折冲宇宙；长戟百万，骁骑千群；奋中黄、育获之士，骋良弓劲弩之势；并州越太行，青州涉济漯；大军汎黄河以角其前，荆州下宛叶而犄其后；雷震虎步，并急虏廷，若举炎火以炳飞蓬，覆沧海以沃熛炭，有何不灭者哉？又操军吏士，其可战者，皆出自幽、冀，或故营部曲，咸怨旷思归，流涕北顾。其馀衮、豫之民，乃吕布、张杨之馀众，覆亡迫胁，权时苟从；各被创夷，人为仇敌。若回旆反徂，登高岗而击鼓吹，扬素挥以启降路，必土崩瓦解，不俟血刃。方今汉室陵迟，纲维弛绝；圣朝无一介之辅，股肱无折冲之势；方畿之内，简练之臣，皆垂头拓翼，莫所凭恃；虽有忠义之佐，胁于暴虐之臣，焉能展其节？又操持部曲精兵七百，围守宫阙，外托宿卫，内实拘执，惧其篡逆之萌，因斯而作。此乃忠臣肝脑涂地之秋，烈士立功之会，可不勗哉？</p><p>操又矫命称制，遣使发兵。恐边远州，郡过听给与，违众旅叛，举以丧名，为天下笑，则明哲不取也。即日幽、并、青、冀四州并进。书到荆州，便勒见兵，与建忠军协同声势。州郡各整义兵，罗落境界，举武扬威，并匡社稷，则非常之功于是乎著。</p><p>其得操首者，封五千户侯，赏钱五千万。部曲偏裨将校诸吏降者，勿有所问。广宣恩信，班扬符赏，布告天下，咸使知圣朝有拘迫之难。如律令。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 古文 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 讨贼檄文 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>《寒窑赋》</title>
+      <link href="/2023/12/29/%E5%AF%92%E7%AA%91%E8%B5%8B/"/>
+      <url>/2023/12/29/%E5%AF%92%E7%AA%91%E8%B5%8B/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>《寒窑赋》，又名《破窑赋》、《劝世章》，相传是北宋贤宰相吕蒙正的作品，目前流传坊间与网络的有两个版本。</p></blockquote><h2 id="版本1"><a href="#版本1" class="headerlink" title="版本1"></a>版本1</h2><pre><code>天有不测风云，人有旦夕祸福。蜈蚣百足，行不及蛇；雄鸡两翼，飞不过鸦。马有千里之程，无骑不能自往；人有冲天之志，非运不能自通。</code></pre><p>　　盖闻：人生在世，富贵不能淫，贫贱不能移。文章盖世，孔子厄于陈邦；武略超群，太公钓于渭水。颜渊命短，殊非凶恶之徒；盗跖年长，岂是善良之辈。尧帝明圣，却生不肖之儿；瞽叟愚顽，反生大孝之子。张良原是布衣，萧何称谓县吏。晏子身无五尺，封作齐国宰相；孔明卧居草庐，能作蜀汉军师。楚霸虽雄，败于乌江自刎；汉王虽弱，竟有万里江山。李广有射虎之威，到老无封；冯唐有乘龙之才，一生不遇。韩信未遇之时，无一日三餐，及至遇行，腰悬三尺玉印，一旦时衰，死于阴人之手。</p><p>　　有先贫而后富，有老壮而少衰。满腹文章，白发竟然不中；才疏学浅，少年及第登科。深院宫娥，运退反为妓妾；风流妓女，时来配作夫人。</p><p>　　青春美女，却招愚蠢之夫；俊秀郎君，反配粗丑之妇。蛟龙未遇，潜水于鱼鳖之间；君子失时，拱手于小人之下。衣服虽破，常存仪礼之容；面带忧愁，每抱怀安之量。时遭不遇，只宜安贫守份；心若不欺，必然扬眉吐气。初贫君子，天然骨骼生成；乍富小人，不脱贫寒肌体。</p><p>　　天不得时，日月无光；地不得时，草木不生；水不得时，风浪不平；人不得时，利运不通。注福注禄，命里已安排定，富贵谁不欲？人若不依根基八字，岂能为卿为相？</p><p>　　吾昔寓居洛阳，朝求僧餐，暮宿破窑，思衣不可遮其体，思食不可济其饥，上人憎，下人厌，人道我贱，非我不弃也。今居朝堂，官至极品，位置三公，身虽鞠躬于一人之下，而列职于千万人之上，有挞百僚之杖，有斩鄙吝之剑，思衣而有罗锦千箱，思食而有珍馐百味，出则壮士执鞭，入则佳人捧觞，上人宠，下人拥。人道我贵，非我之能也，此乃时也、运也、命也。</p><p>　　嗟呼！人生在世，富贵不可尽用，贫贱不可自欺，听由天地循环，周而复始焉。</p><h2 id="版本2"><a href="#版本2" class="headerlink" title="版本2"></a>版本2</h2><p>天地有常用，日月有常明，四时有常序，鬼神有常灵。天有宝，日月星辰。地有宝，五谷金银。家有宝，孝子贤孙。国有宝，正直忠良。合天道，则天府鉴临。合地道，则地府消愆。合人道，则民用和睦。三道既合，祸去福来。天地和，则万物生。地道和，则万物兴。父子和，而家有济。夫妇和，而义不分。</p><p>　　时势不可尽倚，贫穷不可尽欺，世事翻来覆去，须当周而复始。</p><p>　　余者，居洛阳之时，朝投僧寺，夜宿破窑。布衣不能遮其体，饘粥不能充其饥。上人嫌，下人憎，皆言余之贱也，余曰：非贱也，乃时也，运也，命也。余后登高及第，入中书，官至极品，位列三公，思衣则有绮罗千箱，思食则有百味珍馐，有挞百僚之杖，有斩佞臣之剑，出则壮士执鞭，入则佳人扶袂，廪有余粟，库有余财，人皆言余之贵也，余曰：非贵也，乃时也，运也，命也。</p><p>　　蛟龙未遇，暂居云雾之间。君子失时，屈守小人之下。命运未通，被愚人之轻弃。时运未到，被小人之欺凌。初贫君子，自怨骨格风流。乍富小人，不脱俗人体态。生平结交惟结心，莫论富贵贫贱。深得千金，而不为贵，得人一语，而胜千金。吾皆悼追无恨人，富贵须当长保守，</p><p>　　苏秦未遇，归家时，父母憎，兄弟恶，嫂不下玑，妻不愿炊，然衣锦归故里，马壮人强，萤光彩布，兄弟含笑出户迎，妻嫂下阶倾己顾，苏秦本是旧苏秦，昔日何陈今何亲。自家骨肉尚如此，何况区区陌路人，抑犹未也。</p><p>　　文章冠世，孔子尚厄于陈邦。武略超群，太公曾钓于渭水。颜回命短，岂是凶暴之徒。盗柘年长，自非贤良之辈。帝尧天圣，却养不肖之男。瞽叟顽嚣，反生大孝之子。甘罗十二为宰相，买臣五十作公卿。晏婴身长五尺，封为齐国宰相。韩信力无缚鸡，立为汉朝贤臣，未遇之时，口无一日瓮飧，及至兴通，身受齐王将印，吓燕取赵，统百万雄兵，一旦时休，卒于阴人之毒手。李广有射虎之威，到老无封。冯唐有安邦之志，一世无遇。</p><p>　　上古圣贤，不掌阴阳之数。今日儒士，岂离否泰之中。腰金衣紫，都生贫贱之家。草履毛鞋，都是富豪之裔。有贫贱，而后有富贵。有小壮，而后有老衰。人能学积善，家有余庆。青春美女，反招愚独之夫。俊秀才郎，竟配丑貌之妇。五男二女，老来一身全无。万贯千金，死后离乡别井。才疏学浅，少年及第登科。满腹文章，到老终身不第。或富贵，或贫贱，皆由命理注定。</p><p>　　若天不得时，则日月无光。地不得时，则草木不生。水不得时，则波浪不静。人不得时，则命运不通。若无根本八字，岂能为卿为相。一生皆由命，半点不由人。</p><p>　　蜈蚣多足，不及蛇灵。雄鸡有翼，飞不及鸦。马有千里之驰，非人不能自往。人有千般巧计，无运不能自达。</p><p>　　吾敬为此劝世文也。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 古文 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 寒窑赋 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>《洛神赋》曹植 曹魏</title>
+      <link href="/2023/12/29/%E6%B4%9B%E7%A5%9E%E8%B5%8B/"/>
+      <url>/2023/12/29/%E6%B4%9B%E7%A5%9E%E8%B5%8B/</url>
+      
+        <content type="html"><![CDATA[<p>黄初三年，余朝京师，还济洛川。古人有言，斯水之神，名曰宓妃。感宋玉对楚王神女之事，遂作斯赋。其辞曰：</p><p>​余从京域，言归东藩。</p><p>​背伊阙，越轘辕，经通谷，陵景山。</p><p>​日既西倾，车殆马烦。</p><p>​尔迺税驾乎蘅皋，秣驷乎芝田，容与乎阳林，流眄乎洛川。</p><p>​于是精移神骇，忽焉思散，俯则未察，仰以殊观，睹一丽人，于岩之畔。</p><p>迺援御者而告之曰：</p><p>尔有觌于彼者乎？彼何人斯？若此之艳也？</p><p>御者对曰：</p><p>臣闻河洛之神，名曰宓妃。然则君王所见，无迺是乎？其状若何？臣愿闻之。</p><p>余告之曰：</p><p>其形也，</p><p>翩若惊鸿，婉若游龙。</p><p>荣曜秋菊，华茂春松。</p><p>髣髴兮若轻云之蔽月，飘飖兮若流风之回雪。</p><p>远而望之，皎若太阳升朝霞；</p><p>迫而察之，灼若芙蕖出渌波。</p><p>襛纤得衷，修短合度。</p><p>肩若削成，腰如约素。</p><p>延颈秀项，皓质呈露。</p><p>芳泽无加，铅华弗御。</p><p>云髻峨峨，修眉联娟。</p><p>丹唇外朗，皓齿内鲜。</p><p>明眸善睐，靥辅承权。</p><p>瑰姿艳逸，仪静体闲。</p><p>柔情绰态，媚于语言。</p><p>奇服旷世，骨像应图。</p><p>披罗衣之璀粲兮，珥瑶碧之华琚。</p><p>戴金翠之首饰，缀明珠以耀躯。</p><p>践远游之文履，曳雾绡之轻裾。</p><p>微幽兰之芳蔼兮，步踟蹰于山隅。</p><p>于是忽焉纵体，以遨以嬉。</p><p>左倚采旄，右荫桂旗。</p><p>攘皓腕于神浒兮，采湍濑之玄芝。</p><p>余情悦其淑美兮，心振荡而不怡。</p><p>无良媒以接懽兮，托微波而通辞。</p><p>愿诚素之先达兮，解玉佩以要之。</p><p>嗟佳人之信修兮，羌习礼而明诗。</p><p>抗琼珶以和予兮，指潜渊而为期。</p><p>执眷眷之款实兮，惧斯灵之我欺。</p><p>感交甫之弃言兮，怅犹豫而狐疑。</p><p>收和颜而静志兮，申礼防以自持。</p><p>于是洛灵感焉，徙倚彷徨，</p><p>神光离合，乍阴乍阳。</p><p>竦轻躯以鹤立，若将飞而未翔。</p><p>践椒涂之郁烈，步蘅薄而流芳。</p><p>超长吟以永慕兮，声哀厉而弥长。</p><p>尔迺众灵杂遝，命俦啸侣，</p><p>或戏清流，或翔神渚，</p><p>或采明珠，或拾翠羽。</p><p>从南湘之二妃，携汉滨之游女。</p><p>叹匏瓜之无匹兮，咏牵牛之独处。</p><p>扬轻袿之猗靡兮，翳修袖以延伫。</p><p>体迅飞凫，飘忽若神，</p><p>凌波微步，罗袜生尘。</p><p>动无常则，若危若安。</p><p>进止难期，若往若还。</p><p>转眄流精，光润玉颜。</p><p>含辞未吐，气若幽兰。</p><p>华容婀娜，令我忘餐。</p><p>于是屏翳收风，川后静波。</p><p>冯夷鸣鼓，女娲清歌。</p><p>腾文鱼以警乘，鸣玉鸾以偕逝。</p><p>六龙俨其齐首，载云车之容裔。</p><p>鲸鲵踊而夹毂，水禽翔而为卫。</p><p>于是越北沚，过南冈，纡素领，回清阳。</p><p>动朱唇以徐言，陈交接之大纲。</p><p>恨人神之道殊兮，怨盛年之莫当。</p><p>抗罗袂以掩涕兮，泪流襟之浪浪。</p><p>悼良会之永绝兮，哀一逝而异乡。</p><p>无微情以效爱兮，献江南之明珰。</p><p>虽潜处于太阴，长寄心于君王。</p><p>忽不悟其所舍，怅神宵而蔽光。</p><p>于是背下陵高，足往神留，</p><p>遗情想像，顾望怀愁。</p><p>冀灵体之复形，御轻舟而上溯。</p><p>浮长川而忘反，思绵绵而增慕。</p><p>夜耿耿而不寐，霑繁霜而至曙。</p><p>命仆夫而就驾，吾将归乎东路。</p><p>揽𬴂辔以抗策，怅盘桓而不能去。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 古文 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 洛神赋 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Knife4j在线API文档</title>
+      <link href="/2023/12/29/Knife4j%E5%9C%A8%E7%BA%BFAPI%E6%96%87%E6%A1%A3/"/>
+      <url>/2023/12/29/Knife4j%E5%9C%A8%E7%BA%BFAPI%E6%96%87%E6%A1%A3/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h2><p><code>Knife4j</code>是一款可以提供在线API文档的框架，是基于Swagger框架实现的，在Spring Boot项目中，使用Knife4j需要添加依赖。</p><p>Slfe4j依赖：</p><pre><code class="XML">&lt;!-- 依赖项:knife4j-spring-boot-starter --&gt;&lt;dependency&gt;    &lt;groupId&gt;com.github.xiaoymin&lt;/groupId&gt;    &lt;artifactId&gt;knife4j-spring-boot-starter&lt;/artifactId&gt;    &lt;version&gt;2.0.9&lt;/version&gt;&lt;/dependency&gt;</code></pre><h2 id="2-Knife4jConfig类"><a href="#2-Knife4jConfig类" class="headerlink" title="2. Knife4jConfig类"></a>2. Knife4jConfig类</h2><p>需要添加配置，在<code>xxx项目</code>的<code>xxx.xxx.xxx.xxx.config</code>包下创建</p><pre><code class="java">@Configuration@EnableSwagger2WebMvcpublic class Knife4jConfig &#123;    /**     * 【重要】指定Controller包路径     */    private String basePackage = &quot;xxx.xxx.xxx.xxx.controller&quot;;    /**     * 分组名称     */    private String groupName = &quot;xxx&quot;;    /**     * 主机名     */    private String host = &quot;http://java.xxx.cn&quot;;    /**     * 标题     */    private String title = &quot;xxx在线API文档--商品管理&quot;;    /**     * 简介     */    private String description = &quot;xxx在线API文档--商品管理&quot;;    /**     * 服务条款URL     */    private String termsOfServiceUrl = &quot;http://www.apache.org/licenses/LICENSE-2.0&quot;;    /**     * 联系人     */    private String contactName = &quot;Java教学研发部&quot;;    /**     * 联系网址     */    private String contactUrl = &quot;http://java.xxx.cn&quot;;    /**     * 联系邮箱     */    private String contactEmail = &quot;java@xxx.cn&quot;;    /**     * 版本号     */    private String version = &quot;1.0.0&quot;;    @Autowired    private OpenApiExtensionResolver openApiExtensionResolver;    @Bean    public Docket docket() &#123;        String groupName = &quot;1.0.0&quot;;        Docket docket = new Docket(DocumentationType.SWAGGER_2)                .host(host)                .apiInfo(apiInfo())                .groupName(groupName)                .select()                .apis(RequestHandlerSelectors.basePackage(basePackage))                .paths(PathSelectors.any())                .build()                .extensions(openApiExtensionResolver.buildExtensions(groupName));        return docket;    &#125;    private ApiInfo apiInfo() &#123;        return new ApiInfoBuilder()                .title(title)                .description(description)                .termsOfServiceUrl(termsOfServiceUrl)                .contact(new Contact(contactName,contactUrl,contactEmail))                .version(version)                .build();    &#125;&#125;</code></pre><blockquote><p>注意：必须修改以上配置中的包名，保证是当前项目中控制器类所在的包！其它各项均可不修改，以上配置代码可以从Knife4j的官网找到！还需要在配置文件中开启Knife4j的增强模式：</p></blockquote><h2 id="3-Knife4j配置"><a href="#3-Knife4j配置" class="headerlink" title="3. Knife4j配置"></a>3. Knife4j配置</h2><pre><code class="yml">knife4j:# 是否开启增强模式  enable: true</code></pre><h2 id="4-启动项目"><a href="#4-启动项目" class="headerlink" title="4. 启动项目"></a>4. 启动项目</h2><p>完成后，启动项目，在浏览器中访问 <a href="http://localhost:8080/doc.html">http://localhost:8080/doc.html</a> 即可查看当前项目的API文档。</p><pre><code class="java">@Api(tags = &quot;管理员管理模块&quot;)  // @RestController@RequestMapping(value = &quot;/admins&quot;, produces = &quot;application/json; charset=utf-8&quot;)public class AdminController &#123;    // 其它代码...&#125;</code></pre><h2 id="5-ApiOperation注解"><a href="#5-ApiOperation注解" class="headerlink" title="5. @ApiOperation注解"></a>5. @ApiOperation注解</h2><p>在处理请求的方法上添加<code>@ApiOperation</code>注解可以配置业务名称</p><pre><code class="java">@ApiOperation(&quot;管理员登录&quot;) // 新增@PostMapping(&quot;/login&quot;)public JsonResult&lt;AdminSimpleVO&gt; login(@Validated AdminLoginDTO adminLoginDTO) &#123;    ……&#125;</code></pre><h2 id="6-ApiOperationSupport注解"><a href="#6-ApiOperationSupport注解" class="headerlink" title="6. @ApiOperationSupport注解"></a>6. @ApiOperationSupport注解</h2><p>当需要指定各业务在API文档中的显示顺序时，可以在处理请求的方法上添加<code>@ApiOperationSupport</code>注解，配置此注解的order属性，最终在显示API文档时，会根据order属性值升序排列，例如：</p><pre><code class="java">@ApiOperation(&quot;管理员登录&quot;)@ApiOperationSupport(order = 900) //升序排列@PostMapping(&quot;/login&quot;)public JsonResult&lt;AdminSimpleVO&gt; login(@Validated AdminLoginDTO adminLoginDTO) &#123;   ……&#125;</code></pre><p>建议以上配置的order值至少是2位的数字，并且有预留位置，例如1019之间的都是增加数据的业务，2029之间的都是删除数据的业务，3039之间都是修改数据的业务，4049之间都是查询数据的业务。</p><h2 id="7-ApiModelProperty注解"><a href="#7-ApiModelProperty注解" class="headerlink" title="7. @ApiModelProperty注解"></a>7. @ApiModelProperty注解</h2><p>如果控制器处理请求的方法的参数是自定义的封装类型，可以在封装类型的属性上添加<code>@ApiModelProperty</code>来配置参数在文档中的显示，例如：</p><pre><code class="java">@Datapublic class AdminLoginDTO implements Serializable &#123;    @ApiModelProperty(value = &quot;用户名&quot;) // 配置参数名    private String username;    @ApiModelProperty(&quot;密码&quot;) // 配置参数名    private String password;&#125;</code></pre><p>以上<code>@ApiModelProperty</code>除了可以配置参数在API文档中显示的名称以外，还可以配置是否必须，例如：</p><pre><code class="java">@ApiModelProperty(value = &quot;用户名&quot;, required = true)</code></pre><p>另外，还可以配置参数类型等，但是，并不是必须配置，通常框架可以正常自动识别。</p><p>对于部分名称可能比较特殊（一般人直接看不懂）的属性，或者对值的规范性要求比较明确（例如某些取值为0或1）的属性，可以列举示例，使得查看API文档的人可以参考，例如：</p><pre><code class="java">@ApiModelProperty(value = &quot;用户名&quot;, required = true, example = &quot;admin&quot;)</code></pre><p>除以配置请求参数以外，此属性还可以用于响应结果的类型，例如：public class JsonResult<T> implements Serializable {</p><pre><code class="java">@ApiModelProperty(&quot;业务状态码&quot;)private Integer state;@ApiModelProperty(&quot;消息&quot;)private String message;@ApiModelProperty(&quot;数据&quot;)private T data;// ......</code></pre><p>如果以上private T data;的实际值也需要添加说明，则在对应的类的属性上继续使用@ApiModelProperty配置即可！需要注意：此处data属性可以是任意数据类型，必须声明为泛型，不可以是Object，否则将无法应用<code>@ApiModelProperty</code>的配置。</p><p>另外，当添加在响应的类型的属性上时，还可以在<code>@ApiModelProperty</code>注解中配置position属性，用于设置各属性在响应的JSON中的显示顺序，例如：</p><pre><code class="java">@ApiModelProperty(value = &quot;业务状态码&quot;, position = 5)</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+          <category> 框架 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> knife4j </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>《滕王阁序》唐代 · 王勃</title>
+      <link href="/2023/12/28/%E6%BB%95%E7%8E%8B%E9%98%81%E5%BA%8F/"/>
+      <url>/2023/12/28/%E6%BB%95%E7%8E%8B%E9%98%81%E5%BA%8F/</url>
+      
+        <content type="html"><![CDATA[<p>豫章故郡，洪都新府。星分翼轸，地接衡庐。襟三江而带五湖，控蛮荆而引瓯越。物华天宝，龙光射牛斗之墟；人杰地灵，徐孺下陈蕃之榻。雄州雾列，俊采星驰。台隍枕夷夏之交，宾主尽东南之美。都督阎公之雅望，棨戟遥临；宇文新州之懿范，襜帷暂驻。十旬休假，胜友如云；千里逢迎，高朋满座。腾蛟起凤，孟学士之词宗；紫电青霜，王将军之武库。家君作宰，路出名区；童子何知，躬逢胜饯。</p><p>时维九月，序属三秋。潦水尽而寒潭清，烟光凝而暮山紫。俨骖騑于上路，访风景于崇阿。临帝子之长洲，得天人之旧馆。层峦耸翠，上出重霄；飞阁流丹，下临无地。鹤汀凫渚，穷岛屿之萦回；桂殿兰宫，即冈峦之体势。</p><p>披绣闼，俯雕甍，山原旷其盈视，川泽纡其骇瞩。闾阎扑地，钟鸣鼎食之家；舸舰弥津，青雀黄龙之舳。云销雨霁，彩彻区明。落霞与孤鹜齐飞，秋水共长天一色。渔舟唱晚，响穷彭蠡之滨，雁阵惊寒，声断衡阳之浦。</p><p>遥襟甫畅，逸兴遄飞。爽籁发而清风生，纤歌凝而白云遏。睢园绿竹，气凌彭泽之樽；邺水朱华，光照临川之笔。四美具，二难并。穷睇眄于中天，极娱游于暇日。天高地迥，觉宇宙之无穷；兴尽悲来，识盈虚之有数。望长安于日下，目吴会于云间。地势极而南溟深，天柱高而北辰远。关山难越，谁悲失路之人；萍水相逢，尽是他乡之客。怀帝阍而不见，奉宣室以何年？</p><p>嗟乎！时运不齐，命途多舛。冯唐易老，李广难封。屈贾谊于长沙，非无圣主；窜梁鸿于海曲，岂乏明时？所赖君子见机，达人知命。老当益壮，宁移白首之心？穷且益坚，不坠青云之志。酌贪泉而觉爽，处涸辙以犹欢。北海虽赊，扶摇可接；东隅已逝，桑榆非晚。孟尝高洁，空余报国之情；阮籍猖狂，岂效穷途之哭！</p><p>勃，三尺微命，一介书生。无路请缨，等终军之弱冠；有怀投笔，慕宗悫之长风。舍簪笏于百龄，奉晨昏于万里。非谢家之宝树，接孟氏之芳邻。他日趋庭，叨陪鲤对；今兹捧袂，喜托龙门。杨意不逢，抚凌云而自惜；钟期既遇，奏流水以何惭？</p><p>呜呼！胜地不常，盛筵难再；兰亭已矣，梓泽丘墟。临别赠言，幸承恩于伟饯；登高作赋，是所望于群公。敢竭鄙怀，恭疏短引；一言均赋，四韵俱成。请洒潘江，各倾陆海云尔：</p><p>　　滕王高阁临江渚，佩玉鸣鸾罢歌舞。</p><p>　　画栋朝飞南浦云，珠帘暮卷西山雨。</p><p>　　闲云潭影日悠悠，物换星移几度秋。</p><p>　　阁中帝子今何在？槛外长江空自流。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 古文 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 滕王阁序 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
